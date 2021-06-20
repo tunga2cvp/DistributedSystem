@@ -1,3 +1,4 @@
+The running is
 ```bash
 sudo apt update
 sudo apt install mysql-server mysql-client
@@ -11,7 +12,14 @@ CHANGE MASTER TO MASTER_HOST='192.168.56.7', MASTER_USER='slave_user', MASTER_PA
 sudo mysql
 cat petdatabase.sql 
 sudo mysql petdatabase < ~/petdatabase.sql
-sudo service mysql restart
+
 sudo mysql
 
+```
+
+In some erroneous cases, to stop the slave replication task of MySQL, apply these series of commands                  
+```sql
+stop slave;
+stop slave io_thread;
+stop slave sql_thread;
 ```
